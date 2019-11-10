@@ -1,0 +1,22 @@
+{
+  "name": "godoc",
+  "description": "Type 'godoc' plus a search term into the Omnibox to open search in new tab.",
+  "version": "1.0.0",
+  "background": {
+    "scripts": ["js/background.js"],
+    "persistent": false
+  },
+  "omnibox": { "keyword": "godoc" },
+  "manifest_version": 2,
+  "permissions": ["tabs"],
+  "browser_action": {
+    "default_icon": {
+      "16": "img/icon_16x16.png"
+    }
+  },
+  "icons": {
+    "16": "img/icon_16x16.png",
+    "32": "img/icon_32x32.png",
+    "128": "img/icon_128x128.png"
+  }
+}
