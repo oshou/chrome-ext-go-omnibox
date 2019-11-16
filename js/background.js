@@ -26,36 +26,57 @@ chrome.omnibox.onInputChanged.addListener(function(text, suggest) {
       description: "spec : [公式] 言語仕様"
     },
     {
+      content: "spec_jp",
+      description: "spec : [公式] 言語仕様(日本語版サイト)"
+    },
+    {
       content: "faq",
       description: "faq : [公式] FAQ"
     },
     {
-      content: "go-way",
-      description: "go-way : [非公式] Go-Way"
+      content: "faq_jp",
+      description: "faq : [公式] FAQ(日本語版サイト)"
     },
     {
       content: "review",
-      description: "review : [非公式] レビューコメント(和訳)"
+      description: "review : [公式] レビューコメント"
+    },
+    {
+      content: "review_jp",
+      description: "review : [非公式] レビューコメント(和訳記事)"
     },
     {
       content: "effective",
-      description: "effective : [公式] 実践Go言語(和訳)"
+      description: "effective : [公式] 実践Go言語"
     },
     {
-      content: "test",
-      description: "test : [非公式] テスト概要"
-    },
-    {
-      content: "sample",
-      description: "sample : [非公式] サンプル"
+      content: "effective_jp",
+      description: "effective : [公式] 実践Go言語(日本語版サイト)"
     },
     {
       content: "tutorial",
-      description: "tutorial : [公式] チュートリアル"
+      description: "tutorial : [公式] Tour of Go チュートリアル"
+    },
+    {
+      content: "tutorial_jp",
+      description: "tutorial : [公式] Tour of Go チュートリアル(日本語版サイト)"
+    },
+    {
+      content: "test",
+      description: "test : [非公式] DMM 社ブログの「Go の API テスト技法」記事"
+    },
+    {
+      content: "sample",
+      description: "sample : [非公式] Go by Example"
     },
     {
       content: "proverb",
-      description: "proverb: [非公式] 格言(和訳)"
+      description:
+        "proverb: [非公式] Go 作者 RobPike の「Go Provers」の和訳記事"
+    },
+    {
+      content: "go-way",
+      description: "go-way : [非公式] 「Go に入っては Go に従え」の slide 参照"
     }
   ]);
 });
@@ -87,23 +108,48 @@ chrome.omnibox.onInputEntered.addListener(function(text) {
       break;
     // [公式] 言語仕様
     case "spec":
+      newURL = "https://golang.org/ref/spec";
+      break;
+    // [公式] 言語仕様(日本語版サイト)
+    case "spec_jp":
       newURL = "http://golang.jp/go_spec";
       break;
     // [公式] FAQ
     case "faq":
+      newURL = "https://golang.org/doc/faq";
+      break;
+    // [公式] FAQ(日本語版サイト)
+    case "faq_jp":
       newURL = "http://golang.jp/go_faq";
+      break;
+    // [公式] レビューコメント
+    case "review":
+      newURL = "https://github.com/golang/go/wiki/CodeReviewComments";
+      break;
+    // [非公式] レビューコメント(和訳記事)
+    case "review_jp":
+      newURL =
+        "https://gist.github.com/knsh14/0507b98c6b62959011ba9e4c310cd15d";
+      break;
+    // [公式] 実践Go言語
+    case "effective":
+      newURL = "https://golang.org/doc/effective_go.html";
+      break;
+    // [公式] 実践Go言語(日本語版サイト)
+    case "effective_jp":
+      newURL = "http://golang.jp/effective_go";
+      break;
+    // [公式] Tour of Go チュートリアル
+    case "tutorial":
+      newURL = "https://tour.golang.org";
+      break;
+    // [公式] Tour of Go チュートリアル(日本語版サイト)
+    case "tutorial_jp":
+      newURL = "https://go-tour-jp.appspot.com/";
       break;
     // [非公式] Go-Way
     case "go-way":
       newURL = "https://ukai-go-talks.appspot.com/2014/gocon.slide#1";
-      break;
-    // [非公式] レビューコメント(和訳)
-    case "review":
-      newURL = "https://qiita.com/knsh14/items/8b73b31822c109d4c497";
-      break;
-    // [公式] 実践Go言語(和訳)
-    case "effective":
-      newURL = "http://golang.jp/effective_go";
       break;
     // [非公式] テスト概要
     case "test":
@@ -112,10 +158,6 @@ chrome.omnibox.onInputEntered.addListener(function(text) {
     // [非公式] サンプル
     case "sample":
       newURL = "https://oohira.github.io/gobyexample-jp/";
-      break;
-    // [公式] チュートリアル(日本語版)
-    case "tutorial":
-      newURL = "https://go-tour-jp.appspot.com/";
       break;
     // [非公式] 格言(和訳)
     case "proverb":
