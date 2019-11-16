@@ -6,6 +6,10 @@ chrome.omnibox.onInputChanged.addListener(function(text, suggest) {
       description: "src : [公式] Githubソース"
     },
     {
+      content: "builtin",
+      description: "src : [公式] Githubソース(組み込み)"
+    },
+    {
       content: "std",
       description: "std : [公式] 標準パッケージ一覧"
     },
@@ -63,6 +67,11 @@ chrome.omnibox.onInputEntered.addListener(function(text) {
     // [公式] Githubソース
     case "src":
       newURL = "https://github.com/golang/go/tree/master/src";
+      break;
+    // [公式] Githubソース(組み込み)
+    case "builtin":
+      newURL =
+        "https://github.com/golang/go/tree/master/src/builtin/builtin.go";
       break;
     // [公式] 標準パッケージ一覧
     case "std":
