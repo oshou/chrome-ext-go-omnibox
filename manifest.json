@@ -1,12 +1,12 @@
 {
-  "name": "godoc",
-  "description": "Type 'godoc' plus a search term into the Omnibox to open search in new tab.",
+  "name": "gdoc",
+  "description": "Type 'gdoc' plus a search term into the Omnibox to open search in new tab.",
   "version": "1.0.5",
   "background": {
     "scripts": ["js/background.js"],
     "persistent": false
   },
-  "omnibox": { "keyword": "godoc" },
+  "omnibox": { "keyword": "gdoc" },
   "manifest_version": 2,
   "permissions": ["tabs"],
   "browser_action": {
