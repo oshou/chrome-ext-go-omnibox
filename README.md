@@ -1,4 +1,4 @@
-# Chrome 拡張 gdoc-omnibox
+# [Chrome拡張] gdoc-omnibox
 
 ## 指定方法
 
